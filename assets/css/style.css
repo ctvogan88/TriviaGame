@@ -1,0 +1,78 @@
+#answers-box {
+    height: 500px;
+}
+
+.answer-option {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    height: 50px;
+    width: 100%;
+}
+
+.answer-option:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://cdn-assets.alltrails.com/uploads/photo/image/10120447/extra_large_32461205d6fa968ced998c9fafde8866.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#button-row {
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+h1{
+    display: inline;
+    float: none;
+}
+
+#time-remaining {
+    font-family: 
+}
+
+#start-button {
+
+}
+
+#timer {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#welcome-text {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 30px;
+    color: #6e6e6e;
+}
+
+#welcome-text-mirror {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 50px;
+    color: #6e6e6e;
+    height: 100%;
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
