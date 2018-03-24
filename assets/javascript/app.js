@@ -9,29 +9,22 @@ $(document).ready(function () {
 
   // here is the question/answers object
   var trivia = {
+   
     triv1: {
-      item: "What is the tallest mountain on Planet Earth?",
-      answers: {
-        items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
-      }
+      q: "What is the tallest mountain on Planet Earth?",
+      a: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"],
+      correct: "Mauna Kea, Hawaii"
     },
     triv2: {
-      item: "What is the tallest mountain on Planet Earth?",
-      answers: {
-        items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
-      }
+      q: "What is the tallest mountain on Planet Earth?",
+      a: "nope",
+        wrong: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"],
     },
     triv3: {
-      item: "What is the tallest mountain on Planet Earth?",
-      answers: {
-        items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
+      q: "What is the tallest mountain on Planet Earth?",
+      a: {
+        wrong: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
       }
-    },
-    triv4: {
-      item: "What is the tallest mountain on Planet Earth?",
-      answers: {
-        items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
-              }
     }
   };
 
@@ -41,74 +34,71 @@ $(document).ready(function () {
 
     time: 0,
     lap: 1,
-  
-    reset: function() {
-  
+
+    reset: function () {
+
       stopwatch.time = 0;
       stopwatch.lap = 1;
-  
+
       // DONE: Change the "display" div to "00:00."
       $("#display").text("00:00");
 
       //start: function() {
-        // DONE: Use setInterval to start the count here and set the clock to running.
-        //if (!clockRunning) {
-          //intervalId = setInterval(stopwatch.count, 1000);
-          //clockRunning = true;
-        }
-      }
-
-  // loop through questions
-
-  for (var i = 0; i < trivia.length; i++) {
-
+      // DONE: Use setInterval to start the count here and set the clock to running.
+      //if (!clockRunning) {
+      //intervalId = setInterval(stopwatch.count, 1000);
+      //clockRunning = true;
+    }
   }
 
-  //window.onload = function() {
-  //$().button('toggle')
-  //$().button('dispose')
-  //$("#start").button('toggle');
 
   $("#start").click(function () {
-    console.log("works");
-    console.log(trivia.triv1.item)
-    $("#questionDiv").text(trivia.triv1.item);
+
+    // defines the question number
+    var questionNum = 1;
+
+    // sends the question to the question DIV
+    console.log(trivia.triv1.q);
+    $("#questionDiv").text(trivia.triv1.q);
+    
+
+    var ansCt = "trivia.triv" + questionNum + ".answers.items";
+    console.log(ansCt);
+    
+
+    // counts the number of question/answer combos in the object // console.log(trivLength)
+    var trivLength = Object.keys(trivia).length;
+
+    // loop through questions
+    for (var i = 0; i < trivLength; i++) {
+
+      // populates the answers to the answer DIV
+      for (var j = 0; j < 4; j++) {
+
+      //console.log(trivia.triv1.a[j]);
+      //$(".answer-option").append(trivia.triv1.a[j]);
+
+      var a = $("<button><p>");
+      // Adding a class
+      a.addClass("correct");
+      // Provided the initial button text
+      a.text(trivia.triv1.a[j]);
+      // Added the button to the HTML
+      $(".answer-option").append(a);
 
 
-    console.log(trivia.length)
-
-    $(".question").text(trivia.triv1.item);
-      //  Set the button alert's timeout to run three seconds after the function's called.
-      delayButtonAlert = setTimeout(function() {
-        alert("Alert #2");
-      }, 1000*15);
-    });
-
- 
+    }
+    console.log(trivia.triv1.correct);
+  }
 
 
-  //game());
-  //$("#stop-time").button('toggle');
-  //$("#stop-time").button('dispose');
+    //  Set the button alert's timeout to run three seconds after the function's called.
 
-  //function game() {
+    timer = setTimeout(function () {
+      alert("Alert #2");
+    }, 1000 * 15);
+  });
 
-  // DONE: Change the "display" div to "00:00."
-  //console.log("works");
-  //$(".answer-option").text("this is an answer!");
-
-  //}
-  //$("#start").click(game.lap);
-
-  //$("#stop").on("click", game.works());
-  //$("#reset").on("click", game.works());
-  //$("#start").on("click", stopwatch.start());
-  //};
-
-  // When the user clicks the `button` in index.html,
-  // the sorted result should be displayed in the `#result` div.
-
-  // DO NOT USE JQUERY TO SELECT ELEMENTS. ONLY USE VANILLA JS.
 
   var newArray = [];
 
@@ -126,6 +116,4 @@ $(document).ready(function () {
     lap: 1,
   }
 
-
 });
-

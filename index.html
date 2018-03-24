@@ -22,24 +22,41 @@
         <div class="text-center" id="welcome-text">Welcome to the Mountain Trivia Game</div>
         <!--<div id="welcome-text-mirror">Welcome to the Mountain Trivia Game</div>-->
         <div class="row">
+            <!-- Empty Column -->
             <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <!-- User Buttons -->
-                <div class="btn-group timer" id="button-row" data-toggle="buttons" >
-                    <button id="start">Start Trivia</button>
-                    <div id="timerDiv"></div>
-                </div>
-                <!-- Question & Answer box -->
-                <div class="card " id="box-score">
-                    <h3 class="card-header" id="questionDiv">Question</h3>
-                    <div class="card-body" id="answer-box">
-                        <div class="answer-option">
-                            <h3>Answer Option</h3>
-                        </div>
+            <!-- Start Timer/Trivia Button -->
+            <div class="col-lg-2">
+                <div id="timerDiv">
+                    <div class="btn-group timer" id="button-row" data-toggle="buttons">
+                        <button id="start">Start Trivia</button>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4"></div>
+            <!-- GIF search bar -->
+            <div class="col-lg-2">
+                <form id="search-form">
+                    <label for="search-input">
+                        <p>Let's see a GIF!!!</p>
+                    </label>
+                    <input type="text" id="search-input">
+                    <br>
+                    <!-- Button triggers new movie to be added -->
+                    <input id="add-GIF" type="submit" value="Giphy AJAX">
+                </form>
+            </div>
+            
+        <div class="col-lg-4"></div>
+
+        <div class="row">
+            <!-- Question & Answer box -->
+            <div class="card " id="box-score">
+                <h3 class="card-header" id="questionDiv">Question</h3>
+                <div class="card-body" id="answer-box">
+                    <div class="answer-option">
+                        <h3>Answer Options</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
