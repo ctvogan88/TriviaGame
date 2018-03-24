@@ -10,39 +10,59 @@ $(document).ready(function () {
   // here is the question/answers object
   var trivia = {
     triv1: {
-      item: "What is the tallest mountian on Planet Earth?",
+      item: "What is the tallest mountain on Planet Earth?",
       answers: {
         items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
       }
     },
     triv2: {
-      item: "What is the tallest mountian on Planet Earth?",
+      item: "What is the tallest mountain on Planet Earth?",
       answers: {
         items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
       }
     },
     triv3: {
-      item: "What is the tallest mountian on Planet Earth?",
+      item: "What is the tallest mountain on Planet Earth?",
       answers: {
         items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
       }
     },
     triv4: {
-      item: "What is the tallest mountian on Planet Earth?",
+      item: "What is the tallest mountain on Planet Earth?",
       answers: {
         items: ["Mt. Everest", "Mauna Kea, Hawaii", "Pico Cristóbal Colón, Colómbia", "Mt. Whitney"]
               }
     }
   };
 
-  var delayButtonAlert;
+  var clockRunning = false;
+
+  var timer = {
+
+    time: 0,
+    lap: 1,
+  
+    reset: function() {
+  
+      stopwatch.time = 0;
+      stopwatch.lap = 1;
+  
+      // DONE: Change the "display" div to "00:00."
+      $("#display").text("00:00");
+
+      //start: function() {
+        // DONE: Use setInterval to start the count here and set the clock to running.
+        //if (!clockRunning) {
+          //intervalId = setInterval(stopwatch.count, 1000);
+          //clockRunning = true;
+        }
+      }
 
   // loop through questions
 
   for (var i = 0; i < trivia.length; i++) {
 
   }
-
 
   //window.onload = function() {
   //$().button('toggle')
@@ -51,9 +71,20 @@ $(document).ready(function () {
 
   $("#start").click(function () {
     console.log("works");
-    $(".answer-option").text(trivia.triv1.item);
+    console.log(trivia.triv1.item)
+    $("#questionDiv").text(trivia.triv1.item);
+
+
     console.log(trivia.length)
-  });
+
+    $(".question").text(trivia.triv1.item);
+      //  Set the button alert's timeout to run three seconds after the function's called.
+      delayButtonAlert = setTimeout(function() {
+        alert("Alert #2");
+      }, 1000*15);
+    });
+
+ 
 
 
   //game());
