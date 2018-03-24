@@ -3,16 +3,10 @@
 }
 
 .answer-option {
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-    height: 300px;
+    height: 50px;
     width: 100%;
 }
 
-.answer-option:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
-}
 
 body, html {
     height: 100%;
@@ -40,8 +34,9 @@ body, html {
 
 #box-score {
     width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
-    margin: 0 auto;
 }
 
 .card {
@@ -54,19 +49,39 @@ body, html {
     margin-left: auto;
     margin-right: auto;
 }
-}
 
 h1{
     display: inline;
     float: none;
 }
 
-#time-remaining {
-    font-family: 
+p {
+    font-style: bold;
+    color: blue;
+    opacity: 0.5;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+p:hover {
+    font-style: bold;
+    color: blue;
+    font-weight: bold;
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+#qanda {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.time-left {
+    text-align: center;
+    color: red;
 }
 
 #start-button {
-
+    color: red;
 }
 
 #timerDiv {
