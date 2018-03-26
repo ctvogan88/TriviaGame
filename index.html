@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Press+Start+2P" rel="stylesheet">
     <!-- Personal Stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/appl.js"></script>
 </head>
 
 <body>
-    <div class="container bg">
+    <div class="bg">
         <div class="text-center" id="welcome-text">Welcome to the Mountain Trivia Game</div>
         <!--<div id="welcome-text-mirror">Welcome to the Mountain Trivia Game</div>-->
         <div class="row">
@@ -27,41 +27,51 @@
             <!-- Start Timer/Trivia Button -->
             <div class="col-lg-2">
                 <div id="timerDiv">
-                    <div class="btn-group timer" id="button-row" data-toggle="buttons">
+                    <div class="btn-group timer" id="timerDiv" data-toggle="buttons">
                         <button id="start">Start Trivia</button>
                     </div>
-                <div class="time-left"></div>    
+                    <div class="time-left">00:15</div>
                 </div>
             </div>
             <!-- GIF search bar -->
             <div class="col-lg-2">
-                <form id="search-form">
-                    <label for="search-input">
-                        <p>Let's see a GIF!!!</p>
-                    </label>
-                    <input type="text" id="search-input">
-                    <br>
-                    <!-- Button triggers new movie to be added -->
-                    <input id="add-GIF" type="submit" value="Giphy AJAX">
-                </form>
-            </div>
-            
-        <div class="col-lg-4"></div>
-
-        <div class="row" id="qanda">
-            <div class="col-lg-12" id="box-score">
-            <!-- Question & Answer box -->
-            <div class="card">
-                <h3 class="card-header" id="questionDiv">Question</h3>
-                <div class="card-body" id="answer-box">
-                    <div class="answer-option">
-                        <p>Answer Options</p>
+                <div id="GIF-search">
+                    <!-- Button triggers AJAX JSON query to Giphy -->
+                    <div class="btn-group timer" id="timerDiv" data-toggle="buttons">
+                        <label for="GIF-input" id="gifSearchBtn"></label>
+                        <input id="add-GIF" type="submit" value="Add a GIF">
                     </div>
+                    <div class="search-input">
+                        <input type="text" id="GIF-input" value="programming">
+                    </div>
+                    <!-- Button triggers clearing the answers box -->
+                    <label for="box-clear" id="boxClearBtn"></label>
+                    <input id="clear-box" type="submit" value="Clear the GIFs">
+                    </form>
                 </div>
             </div>
-        </div>
+
+            <div class="col-lg-4"></div>
+
+            <div class="row" id="qanda">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4" id="centerStage">
+                    <!-- Question & Answer box -->
+                    <div class="card">
+                        <h5 class="card-header" id="questionDiv">Question</h5>
+                        <div class="card-body" id="answer-box">
+                            <div class="answer-option" id="gif-holder"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="gif-buttons"></div>
+            </div>
         </div>
     </div>
+    <!-- <footer class="fixed-bottom">
+        <p>Clayton T Vogan &copy; 2018</p>
+    </footer> -->
 </body>
+
 
 </html>
