@@ -68,8 +68,7 @@ $(document).ready(function () {
 
         var gifImage = $("<img>");
         gifImage.attr("src", results[i].images.fixed_height.url);
-        gifImage.attr("id", "gifBtn");
-
+        gifImage.addClass("gifBtn");
         gifDiv.prepend(p);
         gifDiv.prepend(gifImage);
 
@@ -79,6 +78,20 @@ $(document).ready(function () {
     });
   });
 
+  $(".gifBtn").on("click", function () {
+    console.log("GIF button hit!")
+  });
+
+  /* var gifImage = $("<img>");
+  gifImage.attr("src", results[i].images.fixed_height.url);
+  gifImage.attr("data=still", results[i].images.fixed_height.url);
+  gifImage.attr("data-animate", results[i].images.fixed_height.url);
+  gifImage.attr("data-state", "still");
+  gifImage.attr("class", "gif");
+  gifImage.attr("id", "gif" + i);
+  gifDiv.prepend(p);
+  gifDiv.prepend(gifImage);
+  $("#gif-holder").prepend(gifDiv); */
 
 
   // defines game playing and clock running variables as false and displays 00:00 clock
